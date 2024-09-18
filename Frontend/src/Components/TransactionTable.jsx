@@ -9,6 +9,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend)
 
 const TransactionTable = () => {
   const [transactions, setTransactions] = useState([]);
+
   const [month, setMonth] = useState('03'); // Default month set to March
   const [months] = useState([
     { number: '01', name: 'January' },
@@ -97,7 +98,12 @@ const TransactionTable = () => {
 
 
   return (
+    
     <div>
+
+      
+
+
       <select onChange={(e) => setMonth(e.target.value)} value={month}>
         {months.map(m => (
           <option key={m.number} value={m.number}>

@@ -41,7 +41,7 @@ app.get('/init-db', async (req, res) => {
 
 app.get('/transactions', async (req, res) => {
     try {
-        const { month } = req.query;
+        const { month  } = req.query;
 
         const query = {};
         if (month) {
@@ -52,7 +52,8 @@ app.get('/transactions', async (req, res) => {
                 ]
             };
         }
-       
+        
+        
         // Fetch and sort transactions
         const transactions = await Transaction.find(query).sort({ dateOfSale: 1 }); // Sorting by dateOfSale, ascending
 
